@@ -26,7 +26,7 @@ For example:
 |   **Output** |The amount to pay RENE is: 215 USD  |  he amount to pay ASTRID is: 85 USD|
 
 
-#Architecture
+# Architecture
 The architecture used was: Component-based architecture, having the following classes: 
 ConnectionFile
 Person
