@@ -1,4 +1,19 @@
-# ACME COMPANY MARCELO ROMERO
+### Features
+
+- Support Standard Markdown / CommonMark and GFM(GitHub Flavored Markdown);
+- Full-featured: Real-time Preview, Image (cross-domain) upload, Preformatted text/Code blocks/Tables insert, Code fold, Search replace, Read only, Themes, Multi-languages, L18n, HTML entities, Code syntax highlighting...;
+- Markdown Extras : Support ToC (Table of Contents), Emoji, Task lists, @Links...;
+- Compatible with all major browsers (IE8+), compatible Zepto.js and iPad;
+- Support identification, interpretation, fliter of the HTML tags;
+- Support TeX (LaTeX expressions, Based on KaTeX), Flowchart and Sequence Diagram of Markdown extended syntax;
+- Support AMD/CMD (Require.js & Sea.js) Module Loader, and Custom/define editor plugins;
+
+# Editor.md
+
+![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
+
+![](https://img.shields.io/github/stars/pandao/editor.md.svg) ![](https://img.shields.io/github/forks/pandao/editor.md.svg) ![](https://img.shields.io/github/tag/pandao/editor.md.svg) ![](https://img.shields.io/github/release/pandao/editor.md.svg) ![](https://img.shields.io/github/issues/pandao/editor.md.svg) ![](https://img.shields.io/bower/v/editor.md.svg)
+
 
 **Table of Contents**
 
@@ -6,60 +21,297 @@
 
 [TOC]
 
-#Exercise
-The company ACME offers their employees the flexibility to work the hours they want. They will pay for the hours worked based on the day of the week and time of day, according to the following table:
+#H1 header
+##H2 header
+###H3 header
+####H4 header
+#####H5 header
+######H6 header
+#Heading 1 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+##Heading 2 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+###Heading 3 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+####Heading 4 link [Heading link](https://github.com/pandao/editor.md "Heading link") Heading link [Heading link](https://github.com/pandao/editor.md "Heading link")
+#####Heading 5 link [Heading link](https://github.com/pandao/editor.md "Heading link")
+######Heading 6 link [Heading link](https://github.com/pandao/editor.md "Heading link")
 
-|Monday - Friday   | Saturday and Sunday  |
-| ------------ | ------------ |
-|  00:01 - 09:00 25 USD |  00:01 - 09:00 30 USD |
-|  09:01 - 18:00 15 USD |  09:01 - 18:00 20 USD |
-| 18:01 - 00:00 20 USD  |  18:01 - 00:00 25 USD |
+##Headers (Underline)
 
-The goal of this exercise is to calculate the total that the company has to pay an employee, based on the hours they worked and the times during which they worked. The following abbreviations will be used for entering data:
+H1 Header (Underline)
+=============
 
-| MO   | TU   | WE   | TH   | FR   | SA   | SU   |
-| ------------ | ------------ | ------------ | ------------ | ------------ | ------------ | ------------ |
-|  Monday  | Tuesday |  Wednesday   | Thursday   |  Friday  | Saturday   | Sunday   |
+H2 Header (Underline)
+-------------
 
-Input: the name of an employee and the schedule they worked, indicating the time and hours. This should be a .txt file with at least five sets of data. You can include the data from our two examples below.
+###Characters
+                
+----
 
-Output: indicate how much the employee has to be paid
-For example:
+~~Strikethrough~~ <s>Strikethrough (when enable html tag decode.)</s>
+*Italic*      _Italic_
+**Emphasis**  __Emphasis__
+***Emphasis Italic*** ___Emphasis Italic___
 
-|  Case |  Case 1  | Case2   |
-| ------------ | ------------ | ------------ |
-|  **Input** | RENE=MO10:00-12:00,TU10:00-12:00,TH01:00-03:00,SA14:00-18:00,SU20:00-21:00  | ASTRID=MO10:00-12:00,TH12:00-14:00,SU20:00-21:00  |
-|   **Output** |The amount to pay RENE is: 215 USD  |  he amount to pay ASTRID is: 85 USD|
+Superscript: X<sub>2</sub>，Subscript: O<sup>2</sup>
 
+**Abbreviation(link HTML abbr tag)**
 
-#Architecture
-The architecture used was: Component-based architecture, having the following classes: 
-ConnectionFile
-Person
-Schedule
-Program
+The <abbr title="Hyper Text Markup Language">HTML</abbr> specification is maintained by the <abbr title="World Wide Web Consortium">W3C</abbr>.
 
-#Approach and Methodoloy
+###Blockquotes
 
-The solution was made by separating the different functionalities into components based on the problem. Having the **ConnectionFile class **which has two functions, one to read the file "prueba.txt" and another to close the file.
+> Blockquotes
 
-The** class Person** which contains several variables to store the schedules of the regular work week and weekends. In addition to methods such as** SetName**, **SetHoursWorked** which sets the value of the variables mentioned above. And the **SalaryToPay** function which calculates the value of the salary entered.
+Paragraphs and Line Breaks
+                    
+> "Blockquotes Blockquotes", [Link](http://localhost/)。
 
-The** Schedule class** which has two arrays containing the regular weekdays and weekends. A** SeparateSchedule** function which is used to go through each value entered and separate: the day, the start and end times separately. And to make calls to other functions.
+###Links
 
-The **DayRestriction** function identifies if a valid day has been entered, this function is used in the** IdentifyDay** function which will tell if it is a regular weekday or not.
+[Links](http://localhost/)
 
-The **HourControl **function which is the schedule restriction and is used in the **HourException **function in which other validations are performed. In turn this function is used by the **HoursCounter** function which counts the total hours worked.
+[Links with title](http://localhost/ "link title")
 
-The **HoursSplitter** function which separates the hours in an array and identifies whether it is morning, afternoon or evening.
+`<link>` : <https://github.com>
 
-The** Program class **is in charge of obtaining the .txt file and going through it line by line, separating the name of the string received and displaying the message with the total value to be paid for each worker. 
+[Reference link][id/name] 
 
-#How to Run the Program.
-1. First download the **"prueba.txt"** file and the **"ioetSolutionMR.rar"** file.
+[id/name]: http://link-url/
 
-1. Once downloaded, the **"prueba.txt"** file should be placed in the** root of the local disk C** for later use.
+GFM a-tail link @pandao
 
-1. Unzip the file** "ioetSolutionMR.rar"** which will contain an .exe file.
+###Code Blocks (multi-language) & highlighting
 
-1. Execute the** .exe** file and the solution will appear.
+####Inline code
+
+`$ npm install marked`
+
+####Code Blocks (Indented style)
+
+Indented 4 spaces, like `<pre>` (Preformatted Text).
+
+    <?php
+        echo "Hello world!";
+    ?>
+    
+Code Blocks (Preformatted text):
+
+    | First Header  | Second Header |
+    | ------------- | ------------- |
+    | Content Cell  | Content Cell  |
+    | Content Cell  | Content Cell  |
+
+####Javascript　
+
+```javascript
+function test(){
+	console.log("Hello world!");
+}
+ 
+(function(){
+    var box = function(){
+        return box.fn.init();
+    };
+
+    box.prototype = box.fn = {
+        init : function(){
+            console.log('box.init()');
+
+			return this;
+        },
+
+		add : function(str){
+			alert("add", str);
+
+			return this;
+		},
+
+		remove : function(str){
+			alert("remove", str);
+
+			return this;
+		}
+    };
+    
+    box.fn.init.prototype = box.fn;
+    
+    window.box =box;
+})();
+
+var testBox = box();
+testBox.add("jQuery").remove("jQuery");
+```
+
+####HTML code
+
+```html
+<!DOCTYPE html>
+<html>
+    <head>
+        <mate charest="utf-8" />
+        <title>Hello world!</title>
+    </head>
+    <body>
+        <h1>Hello world!</h1>
+    </body>
+</html>
+```
+
+###Images
+
+Image:
+
+![](https://pandao.github.io/editor.md/examples/images/4.jpg)
+
+> Follow your heart.
+
+![](https://pandao.github.io/editor.md/examples/images/8.jpg)
+
+> 图为：厦门白城沙滩 Xiamen
+
+图片加链接 (Image + Link)：
+
+[![](https://pandao.github.io/editor.md/examples/images/7.jpg)](https://pandao.github.io/editor.md/examples/images/7.jpg "李健首张专辑《似水流年》封面")
+
+> 图为：李健首张专辑《似水流年》封面
+                
+----
+
+###Lists
+
+####Unordered list (-)
+
+- Item A
+- Item B
+- Item C
+     
+####Unordered list (*)
+
+* Item A
+* Item B
+* Item C
+
+####Unordered list (plus sign and nested)
+                
++ Item A
++ Item B
+    + Item B 1
+    + Item B 2
+    + Item B 3
++ Item C
+    * Item C 1
+    * Item C 2
+    * Item C 3
+
+####Ordered list
+                
+1. Item A
+2. Item B
+3. Item C
+                
+----
+                    
+###Tables
+                    
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell 
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
+
+| Function name | Description                    |
+| ------------- | ------------------------------ |
+| `help()`      | Display the help window.       |
+| `destroy()`   | **Destroy your computer!**     |
+
+| Item      | Value |
+| --------- | -----:|
+| Computer  | $1600 |
+| Phone     |   $12 |
+| Pipe      |    $1 |
+
+| Left-Aligned  | Center Aligned  | Right Aligned |
+| :------------ |:---------------:| -----:|
+| col 3 is      | some wordy text | $1600 |
+| col 2 is      | centered        |   $12 |
+| zebra stripes | are neat        |    $1 |
+                
+----
+
+####HTML entities
+
+&copy; &  &uml; &trade; &iexcl; &pound;
+&amp; &lt; &gt; &yen; &euro; &reg; &plusmn; &para; &sect; &brvbar; &macr; &laquo; &middot; 
+
+X&sup2; Y&sup3; &frac34; &frac14;  &times;  &divide;   &raquo;
+
+18&ordm;C  &quot;  &apos;
+
+##Escaping for Special Characters
+
+\*literal asterisks\*
+
+##Markdown extras
+
+###GFM task list
+
+- [x] GFM task list 1
+- [x] GFM task list 2
+- [ ] GFM task list 3
+    - [ ] GFM task list 3-1
+    - [ ] GFM task list 3-2
+    - [ ] GFM task list 3-3
+- [ ] GFM task list 4
+    - [ ] GFM task list 4-1
+    - [ ] GFM task list 4-2
+
+###Emoji mixed :smiley:
+
+> Blockquotes :star:
+
+####GFM task lists & Emoji & fontAwesome icon emoji & editormd logo emoji :editormd-logo-5x:
+
+- [x] :smiley: @mentions, :smiley: #refs, [links](), **formatting**, and <del>tags</del> supported :editormd-logo:;
+- [x] list syntax required (any unordered or ordered list supported) :editormd-logo-3x:;
+- [x] [ ] :smiley: this is a complete item :smiley:;
+- [ ] []this is an incomplete item [test link](#) :fa-star: @pandao; 
+- [ ] [ ]this is an incomplete item :fa-star: :fa-gear:;
+    - [ ] :smiley: this is an incomplete item [test link](#) :fa-star: :fa-gear:;
+    - [ ] :smiley: this is  :fa-star: :fa-gear: an incomplete item [test link](#);
+            
+###TeX(LaTeX)
+   
+$$E=mc^2$$
+
+Inline $$E=mc^2$$ Inline，Inline $$E=mc^2$$ Inline。
+
+$$\(\sqrt{3x-1}+(1+x)^2\)$$
+                    
+$$\sin(\alpha)^{\theta}=\sum_{i=0}^{n}(x^i + \cos(f))$$
+                
+###FlowChart
+
+```flow
+st=>start: Login
+op=>operation: Login operation
+cond=>condition: Successful Yes or No?
+e=>end: To admin
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
+
+###Sequence Diagram
+                    
+```seq
+Andrew->China: Says Hello 
+Note right of China: China thinks\nabout it 
+China-->Andrew: How are you? 
+Andrew->>China: I am good thanks!
+```
+
+###End
