@@ -13,7 +13,7 @@ namespace ioetSolutionMarceloRomero
         {
             int count = 0;
             bool flag = false;
-            while (count < schedule.Length - 1 && !flag)
+            while (count < schedule.Length && !flag)
             {
                 string day = schedule[count].Substring(0, 2);
                 string hours = schedule[count].Substring(2);

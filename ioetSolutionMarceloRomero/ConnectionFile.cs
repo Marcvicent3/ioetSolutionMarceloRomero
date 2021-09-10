@@ -9,7 +9,6 @@ namespace ioetSolutionMarceloRomero
     {
         public StreamReader ReadFile()
         {
-            string line;
             StreamReader file = new StreamReader(@"c:\\prueba.txt");
             return file;
         }
