@@ -1,12 +1,6 @@
 # ACME COMPANY MARCELO ROMERO
 
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
-
-#Exercise
+# Exercise
 The company ACME offers their employees the flexibility to work the hours they want. They will pay for the hours worked based on the day of the week and time of day, according to the following table:
 
 |Monday - Friday   | Saturday and Sunday  |
@@ -32,34 +26,35 @@ For example:
 |   **Output** |The amount to pay RENE is: 215 USD  |  he amount to pay ASTRID is: 85 USD|
 
 
-#Architecture
+# Architecture
 The architecture used was: Component-based architecture, having the following classes: 
 ConnectionFile
 Person
 Schedule
 Program
 
-#Approach and Methodoloy
+# Approach and Methodoloy
 
-The solution was made by separating the different functionalities into components based on the problem. Having the **ConnectionFile class **which has two functions, one to read the file "prueba.txt" and another to close the file.
+The solution was made by separating the different functionalities into components based on the problem. Having the **ConnectionFile class** which has two functions, one to read the file "prueba.txt" and another to close the file.
 
-The** class Person** which contains several variables to store the schedules of the regular work week and weekends. In addition to methods such as** SetName**, **SetHoursWorked** which sets the value of the variables mentioned above. And the **SalaryToPay** function which calculates the value of the salary entered.
+The **class Person** which contains several variables to store the schedules of the regular work week and weekends. In addition to methods such as **SetName**, **SetHoursWorked** which sets the value of the variables mentioned above. And the **SalaryToPay** function which calculates the value of the salary entered.
 
-The** Schedule class** which has two arrays containing the regular weekdays and weekends. A** SeparateSchedule** function which is used to go through each value entered and separate: the day, the start and end times separately. And to make calls to other functions.
+The **Schedule class** which has two arrays containing the regular weekdays and weekends. A **SeparateSchedule** function which is used to go through each value entered and separate: the day, the start and end times separately. And to make calls to other functions.
 
 The **DayRestriction** function identifies if a valid day has been entered, this function is used in the** IdentifyDay** function which will tell if it is a regular weekday or not.
 
-The **HourControl **function which is the schedule restriction and is used in the **HourException **function in which other validations are performed. In turn this function is used by the **HoursCounter** function which counts the total hours worked.
+The **HourControl** function which is the schedule restriction and is used in the **HourException** function in which other validations are performed. In turn this function is used by the **HoursCounter** function which counts the total hours worked.
 
 The **HoursSplitter** function which separates the hours in an array and identifies whether it is morning, afternoon or evening.
 
-The** Program class **is in charge of obtaining the .txt file and going through it line by line, separating the name of the string received and displaying the message with the total value to be paid for each worker. 
+The **Program class** is in charge of obtaining the .txt file and going through it line by line, separating the name of the string received and displaying the message with the total value to be paid for each worker. 
 
-#How to Run the Program.
+# How to Run the Program.
 1. First download the **"prueba.txt"** file and the **"ioetSolutionMR.rar"** file.
 
 1. Once downloaded, the **"prueba.txt"** file should be placed in the** root of the local disk C** for later use.
 
 1. Unzip the file** "ioetSolutionMR.rar"** which will contain an .exe file.
 
-1. Execute the** .exe** file and the solution will appear.
+1. Execute the **.exe** file and the solution will appear.
+
